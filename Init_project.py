@@ -3,4 +3,12 @@ Lista_zakopow = {
     "warzywniak" : ["pomidory", "ogórki"]
 }
 
-print(Lista_zakopow)
+
+
+for k, v in Lista_zakopow.items():
+    print("Idę do", k.capitalize(), "i kupuję tam", v[0].title(),v[1].title())
+
+print("W sumie kupuję", sum(len(v) for v in Lista_zakopow.values()), "produktów")
+
+
+  
