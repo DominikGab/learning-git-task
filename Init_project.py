@@ -11,4 +11,6 @@ for k, v in Lista_zakopow.items():
 print("W sumie kupuję", sum(len(v) for v in Lista_zakopow.values()), "produktów")
 
 
+# Pozdrowienia
+print("Pozdrawiam ze słonecznego Rapallo, we włoskiej Ligurri, gdzie aktualnie przebywam w delegacji!")
   
