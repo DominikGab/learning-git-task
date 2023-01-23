@@ -1,5 +1,5 @@
 Lista_zakopow = {
-    "piekarnia" : ["bułki", "rogaliki"],
+    "piekarnia" : ["bułki", "rogaliki", "chleb"],
     "warzywniak" : ["pomidory", "ogórki"]
 }
 
