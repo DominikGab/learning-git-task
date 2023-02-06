@@ -27,6 +27,9 @@ def liczenie (dzialanie):
         num2 = int(input("Podaj składnik 2: "))
         print("Dzielę", num1, "i", num2)
         print("wynik to:", num1/num2)
+    else:
+        print("Wybrałeś zły numer działania")
+        exit(1)
 
 liczenie(dzialanie)   
 
