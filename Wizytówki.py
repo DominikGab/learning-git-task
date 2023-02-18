@@ -120,7 +120,7 @@ elif wybor_kontaktu == 3:
     liczba = int(input("Podaj, ile chcesz mieć wizytówek: "))
     rodzaj = int(input("Podaj typ wizytowek, 1 - prywatny / 2 - służbowy"))
     
-    def fake_Adressbook():
+    def create_contacts():
         if rodzaj == 1:
             print("Oto Twoja lista prywatnych wizytówek:")
             for i in range (liczba):
@@ -131,7 +131,7 @@ elif wybor_kontaktu == 3:
             for i in range (liczba):
                 contacts = (fake.name(), fake.email(), fake.phone_number(), fake.job(), fake.company())
                 print(contacts)
-    fake_Adressbook()
+    create_contacts()
 
 
 
