@@ -1,26 +1,28 @@
 import random
 
-Biblioteka = (("The Green Mile", 1999, "Drama"),
+Biblioteka1 = (("The Green Mile", 1999, "Drama"),
 ("The Shawshank Redemption", 1994, "Drama"),
 ("Kiler", 1997, "Comedy"),
 ("Breaking Bad", 2008, "Drama","S1", "E1"),
 ("Family Guy", 1999, "Animation", 1, 1),
 ("Pitbull", 2005, "Crime", 1, 1))
 
-print("Oto biblioteka naszych multimediów: ", Biblioteka)
+#print("Oto biblioteka naszych multimediów: ", Biblioteka1)
 
 film_or_serial = input("Wpisz hasło filmy aby wyświetlić filmy lub seriale aby wyświetlić seriale: ")
 Filmy = []
 Seriale = []
 
-for i in Biblioteka:
-    if len(i) == 3:
-        Filmy.append(i)
-print(Filmy)
-for i in Biblioteka:
-    if len(i) == 5:
-        Seriale.append(i)
-print(Seriale)
+if film_or_serial == "filmy":
+    for i in Biblioteka1:
+        if len(i) == 3:
+            Filmy.append(i)
+    print(Filmy)
+if film_or_serial == "seriale":
+    for i in Biblioteka1:
+        if len(i) == 5:
+            Seriale.append(i)
+    print(Seriale)
 
 
 class Movie:
@@ -36,15 +38,6 @@ class Movie:
     def __str__(self):
         return f'{self.title} {self.year} {self.genre}'
 
-Movie1 = Movie( title="The Green Mile", year=1999, genre="Drama")
-Movie2 = Movie(title="The Shawshank Redemption", year=1994, genre = "Drama")
-Movie3 = Movie(title= "Kiler",year=  1997, genre= "Comedy")
-
-library = [Movie(title="The Green Mile", year=1999, genre="Drama"),
-           Movie(title="The Shawshank Redemption", year=1994, genre="Drama"),
-           Movie(title="Kiler", year=1997, genre="Comedy")]
-
-
 class Series(Movie):
     def __init__(self, title, year, genre, sezon, episode):
         super().__init__(title, year, genre)
@@ -58,29 +51,53 @@ class Series(Movie):
     def __str__(self):
         return f'{self.title} {self.year} {self.genre} {self.sezon} {self.episode}'
 
-Serial1 = Series(title="Breaking Bad",year= 2008,genre= "Drama",sezon="S1", episode= "E1")
-Serial2 = Series(title="Family Guy",year= 1999,genre= "Animation",sezon ="S1", episode= "E1")
-Serial3 = Series(title="Pitbull",year= 2005,genre= "Crime",sezon= "S1",episode= "E1")
+Biblioteka = [Movie(title="The Green Mile", year=1999, genre="Drama"),
+              Movie(title="The Shawshank Redemption", year=1994, genre="Drama"),
+              Movie(title="Kiler", year=1997, genre="Comedy"),
+              Series(title="Breaking Bad", year=2008, genre="Drama", sezon="S1", episode="E1"),
+              Series(title="Family Guy", year=1999, genre="Animation", sezon="S1", episode="E1"),
+              Series(title="Pitbull", year=2005, genre="Crime", sezon="S1", episode="E1")]
 
-
-Tytuł = input("Wyszukaj film lub serial, wpisując jego tytuł: ")
+Tytuł = input("Wyszukaj film lub serial, wpisując jego tytuł, wpisz pomiń jeśli chesz pominąć funkcję: ")
 
 def search():
-    if Tytuł == Movie1.title:
-        print(Movie1)
-    elif Tytuł == Movie2.title:
-        print(Movie2)
-    elif Tytuł == Movie3.title:
-        print(Movie3)
-    elif Tytuł == Serial1.title:
-        print(Serial1)
-    elif Tytuł == Serial2.title:
-        print(Serial2)
-    elif Tytuł == Serial3.title:
-        print(Serial3)              
+    if Tytuł == Biblioteka[0].title:
+        print(Biblioteka[0])
+    elif Tytuł == Biblioteka[1].title:
+        print(Biblioteka[1])
+    elif Tytuł == Biblioteka[2].title:
+        print(Biblioteka[2])
+    elif Tytuł == Biblioteka[3].title:
+        print(Biblioteka[3])
+    elif Tytuł == Biblioteka[4].title:
+        print(Biblioteka[4])
+    elif Tytuł == Biblioteka[5].title:
+        print(Biblioteka[5])
+    elif Tytuł == "pomiń":
+        pass              
 search()
 
+libraryV = []
 
+def generate_views(library):
+    element = random.choice(library)
+    element.play()
+    views = random.randint(1, 100)
+    for i in range(views):
+        element.play()
+    print(f"{element.title} odtworzono {element.view} razy.")
+    
+    #libraryV.append(element.title)
+    #libraryV.append(element.view)
+    #print(libraryV)
 
+def run_generate_views(library):
+    for i in range(10):
+        generate_views(library)
+
+chce = input("Wpisz hasło: statystyki, aby zobaczyć wyświetlenia pozycji z biblioteki:")
+
+if chce == "statystyki":
+    run_generate_views(Biblioteka)
 
 
