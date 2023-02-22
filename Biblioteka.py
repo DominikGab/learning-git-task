@@ -87,7 +87,7 @@ def get_movies():
         print(Filmy)
 get_movies()
 
-def get_movies():
+def get_series():
     Seriale = []
     if film_or_serial == "seriale":
         if Biblioteka[0].type == "serial":
@@ -105,7 +105,7 @@ def get_movies():
         elif film_or_serial == "pomiń":
             pass
         print(Seriale)
-get_movies()
+get_series()
 
 Library1 = []
 Library2 = []
